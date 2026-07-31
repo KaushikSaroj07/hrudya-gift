@@ -80,9 +80,9 @@ setTimeout(() => {
 
 loader.style.opacity = "0";
 
-loader.style.visibility = "hidden";
-
-},1800);
+setTimeout(() => {
+    loader.style.display = "none";
+}, 800);
 
 });
 
