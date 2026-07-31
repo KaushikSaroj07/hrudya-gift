@@ -393,3 +393,10 @@ z-index:999;
 position:relative;
 transition:.3s;
 }
+
+.popup.hidden{
+    display:none !important;
+}
+
+
+
