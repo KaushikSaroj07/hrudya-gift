@@ -10,33 +10,69 @@ const closePopup = document.getElementById("closePopup");
 const letter = document.getElementById("letter");
 const gallery = document.getElementById("gallery");
 const typewriter = document.getElementById("typewriter");
+const message = `Hey Hrudya ❤️,
 
-const message = `Dear Hrudya ❤️,
+Kaay chalu aahe?
 
-Today marks the beginning of a wonderful journey.
+Can you believe it's already been two months since you joined HUL? Time really flies.
 
-I know you worked hard to reach this moment and I couldn't be more proud of you.
+Mala mahite suruvatila tula khup tension hota. Nawin office, nawin lok, nawin environment... everything was new.
 
-Never doubt yourself.
+Pan bagh, tu sagla kiti chhan handle kelays. I'm really proud of you. ❤️
 
-You're intelligent.
-You're kind.
-You're beautiful.
-You're capable of achieving amazing things.
+Aaj pan ekach sangnar...
 
-Whenever work feels difficult,
-remember that I'm always cheering for you.
+Tension nako gheus.
 
-Keep smiling.
-Keep learning.
-Keep shining.
+Jar kahi hi vatla, kahi share karaycha asel, kiwa fakta konashi bolaycha mood asel...
 
-Congratulations on your first day at HUL.
+Only gyo to me. ❤️
 
-I love you endlessly.
+Please don't keep everything inside.
 
-❤️
-- Kaushik`;
+Express what you feel.
+
+You know you have amazing friends there...
+
+And obviously, you have me. Always.
+
+Be patient with yourself.
+
+You don't have to be perfect every day.
+
+You're learning, growing, and becoming stronger with every passing day.
+
+And honestly...
+
+Seeing you smile after a long day makes my whole day better.
+
+So whenever you're stressed...
+
+Just call me.
+
+Let's talk, laugh, or simply sit together on a video call.
+
+Because that's when you look the prettiest. ❤️✨
+
+I hope HUL gives you everything you dream of—
+
+New experiences,
+Great friends,
+Success,
+Confidence,
+And lots of happy memories.
+
+No matter where life takes us...
+
+I'll always be your biggest supporter.
+
+I'm so proud of you, Hrudya.
+
+I love you more than words can express.
+
+Forever yours,
+
+❤️ Kaushik`;
 
 window.onload = () => {
     setTimeout(() => {
