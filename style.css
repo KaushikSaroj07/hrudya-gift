@@ -377,6 +377,7 @@ grid-template-columns:1fr;
 height:250px;
 }
 
+
 #typewriter{
 font-size:16px;
 }
@@ -385,4 +386,10 @@ section h2{
 font-size:32px;
 }
 
+}
+.gallery img.zoom{
+transform:scale(1.4);
+z-index:999;
+position:relative;
+transition:.3s;
 }
