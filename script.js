@@ -1,278 +1,302 @@
 const loader = document.getElementById("loader");
 const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
+
 const letterBtn = document.getElementById("letterBtn");
-const memoryBtn = document.getElementById("memoryBtn");
-const celebrateBtn = document.getElementById("celebrate");
+const galleryBtn = document.getElementById("galleryBtn");
+
+const letter = document.getElementById("letter");
+const gallery = document.getElementById("gallery");
+
 const surpriseBtn = document.getElementById("surpriseBtn");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
-const letter = document.getElementById("letter");
-const gallery = document.getElementById("gallery");
+
 const typewriter = document.getElementById("typewriter");
+
 const message = `Hey Hrudya ❤️,
 
 Kaay chalu aahe?
 
 Can you believe it's already been two months since you joined HUL? Time really flies.
 
-Mala mahite suruvatila tula khup tension hota. Nawin office, nawin lok, nawin environment... everything was new.
+Mala mahite suruvatila tula khup tension hota. Nawin office, nawin lok, nawin environment...
 
-Pan bagh, tu sagla kiti chhan handle kelays. I'm really proud of you. ❤️
+Pan bagh...
+
+Tu sagla khup chhan handle kelays.
+
+I'm genuinely so proud of you. ❤️
 
 Aaj pan ekach sangnar...
 
 Tension nako gheus.
 
-Jar kahi hi vatla, kahi share karaycha asel, kiwa fakta konashi bolaycha mood asel...
+Jar kahi hi vatla...
 
 Only gyo to me. ❤️
 
+Try to express what you feel.
+
 Please don't keep everything inside.
 
-Express what you feel.
+You have amazing friends there...
 
-You know you have amazing friends there...
+And obviously...
 
-And obviously, you have me. Always.
+You have me.
 
-Be patient with yourself.
+Always.
 
-You don't have to be perfect every day.
-
-You're learning, growing, and becoming stronger with every passing day.
-
-And honestly...
-
-Seeing you smile after a long day makes my whole day better.
-
-So whenever you're stressed...
+Whenever you're stressed...
 
 Just call me.
 
-Let's talk, laugh, or simply sit together on a video call.
+We'll laugh together.
 
-Because that's when you look the prettiest. ❤️✨
+Because that's when you look the prettiest. ❤️
 
-I hope HUL gives you everything you dream of—
+I hope HUL gives you everything you dream of.
 
-New experiences,
-Great friends,
-Success,
-Confidence,
-And lots of happy memories.
+New memories.
 
-No matter where life takes us...
+New achievements.
 
-I'll always be your biggest supporter.
+Lots of happiness.
 
-I'm so proud of you, Hrudya.
+And endless reasons to smile.
 
-I love you more than words can express.
+I love you so much.
+
+Happy Girlfriend's Day ❤️
 
 Forever yours,
 
 ❤️ Kaushik`;
 
-window.onload = () => {
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.pointerEvents = "none";
-    }, 2500);
-};
+window.addEventListener("load", () => {
 
-musicBtn.onclick = () => {
+setTimeout(() => {
 
-    if (music.paused) {
-        music.play();
-        musicBtn.innerHTML = "⏸ Pause";
-    } else {
-        music.pause();
-        musicBtn.innerHTML = "🎵 Music";
-    }
+loader.style.opacity = "0";
 
-};
+loader.style.visibility = "hidden";
 
-letterBtn.onclick = () => {
+},1800);
 
-    letter.classList.remove("hidden");
+});
 
-    letter.scrollIntoView({
-        behavior: "smooth"
-    });
+musicBtn.addEventListener("click",()=>{
 
-    typeWriter();
+if(music.paused){
 
-};
+music.play();
 
-memoryBtn.onclick = () => {
+musicBtn.innerHTML="⏸ Pause Music";
 
-    gallery.classList.remove("hidden");
+}else{
 
-    gallery.scrollIntoView({
-        behavior: "smooth"
-    });
+music.pause();
 
-};
-
-let i = 0;
-
-function typeWriter() {
-
-    typewriter.innerHTML = "";
-
-    i = 0;
-
-    function write() {
-
-        if (i < message.length) {
-
-            typewriter.innerHTML += message.charAt(i);
-
-            i++;
-
-            setTimeout(write, 35);
-
-        }
-
-    }
-
-    write();
+musicBtn.innerHTML="🎵 Play Music";
 
 }
-// Floating Hearts
 
-function createHeart() {
+});
 
-    const heart = document.createElement("div");
+letterBtn.addEventListener("click",()=>{
 
-    heart.className = "heart";
+letter.classList.remove("hidden");
 
-    heart.innerHTML = ["❤️","💖","💕","💗","💞"][Math.floor(Math.random()*5)];
+letter.scrollIntoView({
 
-    heart.style.left = Math.random()*100 + "vw";
+behavior:"smooth"
 
-    heart.style.fontSize = (18 + Math.random()*25) + "px";
+});
 
-    heart.style.animationDuration = (6 + Math.random()*5) + "s";
+startTyping();
+
+});
+
+galleryBtn.addEventListener("click",()=>{
+
+gallery.classList.remove("hidden");
+
+gallery.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+let i=0;
+
+function startTyping(){
+
+typewriter.innerHTML="";
+
+i=0;
+
+type();
+
+}
+
+function type(){
+
+if(i<message.length){
+
+typewriter.innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(type,35);
+
+}
+
+}
+/* ==========================
+   FLOATING HEARTS
+========================== */
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    const hearts=["❤️","💖","💕","💗","💞"];
+
+    heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(18+Math.random()*18)+"px";
+
+    heart.style.animationDuration=(6+Math.random()*3)+"s";
 
     document.getElementById("hearts").appendChild(heart);
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         heart.remove();
 
-    },11000);
+    },9000);
 
 }
 
-setInterval(createHeart,400);
+setInterval(createHeart,1000);
 
 
-// Surprise Popup
+/* ==========================
+   POPUP
+========================== */
 
-surpriseBtn.addEventListener("click", function () {
-    popup.style.display = "flex";
+surpriseBtn.addEventListener("click",()=>{
+
+    popup.classList.remove("hidden");
+
 });
 
-closePopup.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    popup.style.display = "none";
+closePopup.addEventListener("click",()=>{
+
+    popup.classList.add("hidden");
+
 });
 
-};
+
+popup.addEventListener("click",(e)=>{
+
+    if(e.target===popup){
+
+        popup.classList.add("hidden");
+
+    }
+
+});
 
 
-// Celebrate Button
+/* ==========================
+   IMAGE ZOOM
+========================== */
 
-celebrateBtn.onclick = () => {
+document.querySelectorAll(".gallery img").forEach(img=>{
 
-    createConfetti();
+    img.addEventListener("click",()=>{
 
-};
+        if(img.classList.contains("zoom")){
+
+            img.classList.remove("zoom");
+
+        }else{
+
+            document.querySelectorAll(".gallery img").forEach(i=>i.classList.remove("zoom"));
+
+            img.classList.add("zoom");
+
+        }
+
+    });
+
+});
 
 
-// Confetti
+/* ==========================
+   CONFETTI
+========================== */
 
-function createConfetti(){
+function celebrate(){
 
-    for(let i=0;i<180;i++){
+    for(let i=0;i<80;i++){
 
         const piece=document.createElement("div");
 
         piece.style.position="fixed";
 
-        piece.style.width="10px";
+        piece.style.width="8px";
 
-        piece.style.height="10px";
+        piece.style.height="8px";
+
+        piece.style.borderRadius="50%";
 
         piece.style.left=Math.random()*100+"vw";
 
         piece.style.top="-20px";
 
-        piece.style.borderRadius="50%";
-
         piece.style.background=`hsl(${Math.random()*360},100%,60%)`;
-
-        piece.style.zIndex="9999";
 
         piece.style.pointerEvents="none";
 
-        piece.style.transition="4s linear";
+        piece.style.zIndex="99999";
+
+        piece.style.transition="3.5s linear";
 
         document.body.appendChild(piece);
 
         setTimeout(()=>{
 
-            piece.style.transform=`translateY(${window.innerHeight+200}px)
-            rotate(${Math.random()*720}deg)`;
+            piece.style.transform=`translateY(${window.innerHeight+100}px) rotate(${Math.random()*720}deg)`;
 
             piece.style.opacity="0";
 
-        },20);
+        },50);
 
         setTimeout(()=>{
 
             piece.remove();
 
-        },4200);
+        },3600);
 
     }
 
 }
 
-
-// Image Click Zoom
-
-document.querySelectorAll(".grid img").forEach(img=>{
-
-    img.onclick=()=>{
-
-        if(img.style.transform==="scale(1.5)"){
-
-            img.style.transform="";
-
-            img.style.zIndex="";
-
-            img.style.position="";
-
-        }else{
-
-            img.style.transform="scale(1.5)";
-
-            img.style.zIndex="999";
-
-            img.style.position="relative";
-
-        }
-
-    }
-
-});
+surpriseBtn.addEventListener("click",celebrate);
 
 
-// Auto Play Music After First Tap
+/* ==========================
+   AUTO MUSIC
+========================== */
 
 document.body.addEventListener("click",()=>{
 
@@ -280,7 +304,7 @@ document.body.addEventListener("click",()=>{
 
         music.play().catch(()=>{});
 
-        musicBtn.innerHTML="⏸ Pause";
+        musicBtn.innerHTML="⏸ Pause Music";
 
     }
 
