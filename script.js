@@ -76,13 +76,15 @@ Forever yours,
 
 window.addEventListener("load", () => {
 
-setTimeout(() => {
+    setTimeout(() => {
 
-loader.style.opacity = "0";
+        loader.style.opacity = "0";
 
-setTimeout(() => {
-    loader.style.display = "none";
-}, 800);
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 800);
+
+    }, 1800);
 
 });
 
