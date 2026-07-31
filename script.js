@@ -171,15 +171,15 @@ setInterval(createHeart,400);
 
 // Surprise Popup
 
-surpriseBtn.onclick = () => {
+surpriseBtn.addEventListener("click", function () {
+    popup.style.display = "flex";
+});
 
-    popup.classList.remove("hidden");
-
-};
-
-closePopup.onclick = () => {
-
-    popup.classList.add("hidden");
+closePopup.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    popup.style.display = "none";
+});
 
 };
 
